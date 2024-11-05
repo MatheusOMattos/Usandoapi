@@ -13,13 +13,16 @@ namespace Usandoapi.Pages
         public IndexModel(ApiService apiservice)
         {
             _apiservice = apiservice;
+            Usuarios = new List<Usuario>();
 
         }
-        public string dados { get; set; } = string.Empty;
+        public List<Usuario> Usuarios { get; set; }
+
         public async Task OnGetAsync()
         {
-           dados =  await _apiservice.GetData<List<Usuario>>("https://localhost:7035/Pessoas/json-content");
+            Usuarios = await _apiservice.GetData<List<Usuario>>("https://localhost:7035/Pessoas/json-content");
         }
+        
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Usandoapi.Padrao
 {
-    internal class Usuario
+    public class Usuario
     {
         public string? Nome { get; set; }
         public string? Cpf { get; set; }

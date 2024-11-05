@@ -18,7 +18,7 @@ public class ApiService
         response.EnsureSuccessStatusCode();
         var json = await response.Content.ReadAsStringAsync();
 
-        return (T)JsonConvert.DeserializeObject(json);
+        return JsonConvert.DeserializeObject<T>(json);
 
 
     }
